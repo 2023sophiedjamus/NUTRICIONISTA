@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NUTRICIONISTA - Asistente IA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="contenedor-principal">
+    <!-- Contenedor general que respeta la estructura del boceto -->
+    <section id="zona-de-chat" class="zona-de-chat" aria-label="zona de chat">
+      <div id="lista-mensajes" class="lista-mensajes" role="log" aria-live="polite"></div>
+
+      <!-- Zona de entrada ubicada en la parte inferior de la zona de chat -->
+      <form id="zona-de-escritura" class="zona-de-escritura" aria-label="zona de escritura">
+        <input
+          type="text"
+          id="entrada-mensaje"
+          class="entrada-mensaje"
+          placeholder="Escribí tu consulta nutricional..."
+          maxlength="500"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="boton-enviar" class="boton-enviar">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Carga obligatoria de config.js antes que script.js -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
