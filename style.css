@@ -1,0 +1,158 @@
+/* Reinicio básico y tipografía limpia */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f3f6f4;
+  color: #1f2933;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 1rem;
+}
+
+.contenedor-principal {
+  width: 100%;
+  max-width: 540px;
+  height: 85dvh;
+  max-height: 760px;
+}
+
+/* Estructura principal: zona de chat que contiene los mensajes y abajo la zona de escritura */
+.zona-de-chat {
+  background-color: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(16, 42, 67, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem;
+  gap: 1rem;
+}
+
+.lista-mensajes {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-right: 0.25rem;
+}
+
+/* Burbujas diferenciadas para usuario, agente y estados */
+.burbuja {
+  max-width: 82%;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.burbuja-agente {
+  align-self: flex-start;
+  background-color: #e6f4ea;
+  color: #134e2a;
+  border-bottom-left-radius: 4px;
+}
+
+.burbuja-usuario {
+  align-self: flex-end;
+  background-color: #2e7d32;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.burbuja-estado {
+  align-self: flex-start;
+  background-color: #f0f4f8;
+  color: #486581;
+  font-style: italic;
+  font-size: 0.88rem;
+}
+
+.burbuja-error {
+  align-self: flex-start;
+  background-color: #fde8e8;
+  color: #9b1c1c;
+  border: 1px solid #f8b4b4;
+}
+
+/* Zona inferior de escritura */
+.zona-de-escritura {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 0.45rem 0.6rem;
+}
+
+.zona-de-escritura:focus-within {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.15);
+}
+
+.entrada-mensaje {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #1f2933;
+  padding: 0.4rem;
+  outline: none;
+}
+
+.entrada-mensaje:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.boton-enviar {
+  background-color: #2e7d32;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.boton-enviar:hover:not(:disabled) {
+  background-color: #1b5e20;
+}
+
+.boton-enviar:disabled {
+  background-color: #9fb3c8;
+  cursor: not-allowed;
+}
+
+/* Adaptación móvil */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .contenedor-principal {
+    height: 94dvh;
+  }
+
+  .zona-de-chat {
+    padding: 0.9rem;
+    border-radius: 16px;
+  }
+
+  .burbuja {
+    max-width: 88%;
+  }
+}
